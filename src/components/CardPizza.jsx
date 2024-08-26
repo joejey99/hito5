@@ -1,9 +1,7 @@
 import React from "react";
-import { formatNumber } from '../utils';
+import { formatNumber } from "../utils";
 
 const CardPizza = (props) => {
-
-
   return (
     <div className="container">
       <div className="card" style={{ width: "18rem" }}>
@@ -11,7 +9,12 @@ const CardPizza = (props) => {
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <p className="card-text">
-            Ingredientes: {props.ingredients.join(", ")}
+            Ingredientes:
+            <ul>
+              {props.ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
           </p>
           <p className="card-text">Precio: ${formatNumber(props.price)}</p>
           <button className="btn btn-primary">Ver más</button>
