@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 /* import Home from './components/Home'; */
 /* import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage'; */
-import Cart from './components/Cart';
+/* import Cart from './components/Cart'; */
+import Pizza from './components/Pizza'
 import Footer from './components/Footer';
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
   return (
     <>
       <Navbar />
-{/*       <Home/>
- */}      {/* <RegisterPage/>
+      {/* <Home/> */}
+      {/* <RegisterPage/>
       <LoginPage/> */}
-      <Cart/>
+      {/* <Cart/> */}
+      <Pizza/>
       <Footer/>
     </>
   )
