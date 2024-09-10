@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { formatNumber } from "../utils";
 
 const Navbar = () => {
@@ -10,9 +11,10 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <h5>Pizzeria Mamma Mia !</h5>
-          <a className="navbar-brand" href="#">
+          {/* Cambio href="#" por Link al home */}
+          <Link className="navbar-brand" to="/">
             🍕 Home
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -29,11 +31,13 @@ const Navbar = () => {
               {token ? (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    {/* Cambio href="#" por Link al perfil */}
+                    <Link className="nav-link active" to="/profile">
                       🔓 Profile
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
+                    {/* Cambio href="#" por un botón de Logout, bueno no existe y no es solicitado, se deja como comentario */}
                     <a className="nav-link" href="#">
                       🔒 Logout
                     </a>
@@ -42,20 +46,25 @@ const Navbar = () => {
               ) : (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    {/* Cambio href="#" por Link al login */}
+                    <Link className="nav-link active" to="/login">
                       🔐 Login
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    {/* Cambio href="#" por Link al registro */}
+                    <Link className="nav-link active" to="/register">
                       🔐 Register
-                    </a>
+                    </Link>
                   </li>
                 </>
               )}
             </ul>
           </div>
-          Total: $ {formatNumber(total)}
+          {/* Cambio el texto Total por un Link al carrito */}
+          <Link className="btn btn-primary" to="/cart">
+            🛒 Total: ${formatNumber(total)}
+          </Link>
         </div>
       </nav>
     </div>
